@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../home/styles.css">
+    <link rel="stylesheet" href="../home/sindex.htmls.css">
 
     <style>
         /* Sidebar Styles */
@@ -62,7 +62,7 @@
     <nav class="w-full bg-gray-900 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-xl font-semibold">
-                <a href="../home/home.html" class="text-white hover:text-gray-400">My Portfolio</a>
+                <a href="../home/index.html" class="text-white hover:text-gray-400">My Portfolio</a>
             </div>
 
             <!-- Regular Navbar Links (for larger screens) -->
@@ -102,13 +102,15 @@
 
     <!-- Main Content Section -->
     <main class="text-center mt-12 w-full fade-in-up">
-        <!-- Profile Picture with larger size -->
-        <img src="../home/pfp.png" alt="Profile" class="w-72 h-auto mx-auto mb-6 shadow-2xl fade-in-up object-cover rounded-lg">
+        <!-- Profile Picture with larger size and centered -->
+        <div class="flex justify-center">
+            <img src="maham.png" alt="Profile" class="w-52 h-52 rounded-full shadow-xl object-cover"> <!-- Increased size to w-52 h-52 -->
+        </div>
 
         <!-- Bio Section -->
-        <section class="max-w-3xl mx-auto mt-6 px-4 fade-in-up bg-gray-800 bg-opacity-75 p-8 rounded-lg shadow-lg">
+        <section class="max-w mx-auto mt-6 px-4 fade-in-up bg-gray-800 bg-opacity-75 p-8">
             <h2 class="text-3xl font-semibold mb-4 text-white">About Me</h2>
-            <p class="text-lg text-gray-300 leading-relaxed">
+            <p class="text-lg max-w text-gray-300 leading-relaxed">
                 I am Maham Imran, a passionate app developer specializing in Flutter and Swift, with experience in building high-quality mobile applications. I come from Islamabad, and I am a tech enthusiast who loves exploring new technologies and solving problems. I am always eager to learn and apply my skills to create impactful projects.
             </p>
         </section>
