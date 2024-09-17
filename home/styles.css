@@ -17,3 +17,48 @@ body {
         transform: translateY(0);
     }
 }
+/* Sidebar Styling */
+#menu-toggle:checked + .sidebar {
+    transform: translateX(0);
+}
+
+.sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+}
+
+/* Hide regular navigation links on smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Show the regular navigation on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Hide checkbox input */
+#menu-toggle {
+    display: none;
+}

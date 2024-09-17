@@ -3,12 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../home/styles.css">
+    <style>
+        /* Sidebar Styles */
+        #menu-toggle:checked+.sidebar {
+            transform: translateX(0);
+            /* Show sidebar when checkbox is checked */
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateX(100%);
+            /* Initially hidden */
+            transition: transform 0.3s ease-in-out;
+            z-index: 50;
+        }
+
+        /* Hide the regular navbar on mobile screens */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Show the regular navbar on larger screens */
+        @media (min-width: 1025px) {
+            .hamburger {
+                display: none;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        /* Hide checkbox */
+        #menu-toggle {
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-900 text-white font-lexend min-h-screen flex flex-col items-center">
+<body class="bg-gray-900 text-white font-lexend min-h-screen flex flex-col items-center relative">
 
     <!-- Navigation Bar -->
     <nav class="w-full bg-gray-900 p-4 shadow-lg">
@@ -16,12 +64,40 @@
             <div class="text-xl font-semibold">
                 <a href="../home/home.html" class="text-white hover:text-gray-400">My Portfolio</a>
             </div>
-            <div class="space-x-6">
+
+            <!-- Regular Navbar Links (for larger screens) -->
+            <div class="space-x-6 hidden lg:flex nav-links">
                 <a href="../personal/personal.html" class="hover:text-gray-400">Personal</a>
                 <a href="../gallery/gallery.html" class="hover:text-gray-400">Gallery</a>
                 <a href="../career/career.html" class="hover:text-gray-400">Career</a>
                 <a href="../projects/projects.html" class="hover:text-gray-400">Projects</a>
                 <a href="../contact/contact.html" class="hover:text-gray-400">Contact</a>
+            </div>
+
+            <!-- Hamburger Icon (for smaller screens) -->
+            <label for="menu-toggle" class="hamburger block lg:hidden cursor-pointer">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </label>
+
+            <!-- Hidden checkbox to toggle the sidebar -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+
+            <!-- Sidebar Menu (for smaller screens) -->
+            <div class="sidebar fixed top-0 right-0 bg-gray-800 w-2/3 h-full z-50">
+                <div class="p-4">
+                    <label for="menu-toggle" class="text-white text-xl font-bold cursor-pointer">&times;</label>
+                </div>
+                <div class="mt-16 space-y-6 px-8 text-white">
+                    <a href="../personal/personal.html" class="block hover:text-gray-400">Personal</a>
+                    <a href="../gallery/gallery.html" class="block hover:text-gray-400">Gallery</a>
+                    <a href="../career/career.html" class="block hover:text-gray-400">Career</a>
+                    <a href="../projects/projects.html" class="block hover:text-gray-400">Projects</a>
+                    <a href="../contact/contact.html" class="block hover:text-gray-400">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -29,43 +105,50 @@
     <!-- Main Content Section -->
     <main class="text-center mt-12 w-full fade-in-up">
         <h1 class="text-4xl font-bold mb-8">My Projects</h1>
-        <p class="text-lg text-gray-300 mb-12">Here are some of the projects I've worked on. Explore the technologies I've used and check out the code or live demos!</p>
+        <p class="text-lg text-gray-300 mb-12">Here are some of the projects I've worked on. Explore the technologies
+            I've used and check out the code or live demos!</p>
 
         <!-- Project Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 fade-in-up">
-
-            <!-- Wa Iyyaka Nastaeen Project -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-md transition-colors fade-in-up">
+            <!-- Project 1 -->
+            <div
+                class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-600 transition-colors">
                 <img src="iyyaka.png" alt="Wa Iyyaka Nastaeen" class="w-full h-60 object-cover rounded-lg mb-4">
                 <h2 class="text-2xl font-bold mb-2">Wa Iyyaka Nastaeen</h2>
-                <p class="text-gray-400 mb-4">A supplication reading app built with Flutter and Dart. It allows users to read and favorite supplications.</p>
-                <p class="text-gray-300 mb-4">Technologies: Flutter, Dart, SQLite</p>
+                <p class="text-gray-400 mb-4">A supplication reading app built with Flutter and Dart. It allows users to
+                    read and favorite supplications.</p>
+                <p class="text-gray-300">Technologies: Flutter, Dart, SQLite</p>
             </div>
 
-            <!-- GDSC Solutions Challenge Project -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-md transition-colors fade-in-up">
+            <!-- Project 2 -->
+            <div
+                class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-600 transition-colors">
                 <img src="toolkit.png" alt="DEI Gender Toolkit App" class="w-full h-60 object-cover rounded-lg mb-4">
                 <h2 class="text-2xl font-bold mb-2">DEI Gender Toolkit App</h2>
-                <p class="text-gray-400 mb-4">Develoed an app for Gender DEI toolkits to enhance Diversity, Equity & Inclusion in workplaces in Pakistan</p>
-                <p class="text-gray-300 mb-4">Technologies: Flutter, Usability Design, UX</p>
+                <p class="text-gray-400 mb-4">An app for Gender DEI toolkits to enhance Diversity, Equity & Inclusion in
+                    workplaces in Pakistan.</p>
+                <p class="text-gray-300">Technologies: Flutter, UX Design</p>
             </div>
 
-            <!-- My Memories AR App -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-md transition-colors fade-in-up">
+            <!-- Project 3 -->
+            <div
+                class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-lg hover:bg-gray-600 transition-colors">
                 <img src="mymemories.png" alt="My Memories AR App" class="w-full h-60 object-cover rounded-lg mb-4">
                 <h2 class="text-2xl font-bold mb-2">My Memories AR App</h2>
-                <p class="text-gray-400 mb-4">An augmented reality app built with Flutter and Swift for an international client, featuring in-app purchases and local data storage.</p>
-                <p class="text-gray-300 mb-4">Technologies: Flutter, Swift, ARKit</p>
+                <p class="text-gray-400 mb-4">An augmented reality app built with Flutter and Swift for an international
+                    client.</p>
+                <p class="text-gray-300">Technologies: Flutter, Swift, ARKit</p>
             </div>
-
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-auto w-full bg-gray-900 p-4 text-center text-gray-500 fade-in-up">
+    <footer class="mt-auto w-full bg-gray-900 p-4 text-center text-gray-500">
         <div class="mt-4 space-x-4">
-            <a href="https://www.linkedin.com/in/maham-i-6642a6286/" class="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/mahaamimran" class="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/maham-i-6642a6286/" class="text-gray-400 hover:text-white"
+                target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/mahaamimran" class="text-gray-400 hover:text-white" target="_blank"
+                rel="noopener noreferrer">GitHub</a>
             <a href="mailto:mahaamimran@gmail.com" class="text-gray-400 hover:text-white">Email</a>
         </div>
     </footer>
