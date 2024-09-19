@@ -8,10 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Sidebar Styles */
         #menu-toggle:checked+.sidebar {
             transform: translateX(0);
-            /* Show sidebar when checkbox is checked */
         }
 
         .sidebar {
@@ -22,12 +20,11 @@
             width: 60%;
             background-color: rgba(0, 0, 0, 0.8);
             transform: translateX(100%);
-            /* Initially hidden */
+            /* initially hidden */
             transition: transform 0.3s ease-in-out;
             z-index: 50;
         }
 
-        /* Hide the regular navbar on mobile screens */
         @media (max-width: 1024px) {
             .nav-links {
                 display: none;
@@ -38,7 +35,6 @@
             }
         }
 
-        /* Show the regular navbar on larger screens */
         @media (min-width: 1025px) {
             .hamburger {
                 display: none;
@@ -48,8 +44,6 @@
                 display: none;
             }
         }
-
-        /* Hide checkbox */
         #menu-toggle {
             display: none;
         }
@@ -58,14 +52,14 @@
 
 <body class="bg-gray-900 text-white font-lexend min-h-screen flex flex-col items-center justify-center">
 
-     <!-- Navigation Bar -->
-     <nav class="w-full bg-gray-900 p-4 shadow-lg">
+    <!-- navigation bar -->
+    <nav class="w-full bg-gray-900 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-xl font-semibold">
-                <a href="../home/home.html" class="text-white hover:text-gray-400">My Portfolio</a>
+            <div class="text-2xl font-bold">
+                <a href="../home/index.html" class="text-white hover:text-gray-400">My Portfolio</a>
             </div>
 
-            <!-- Regular Navbar Links (for larger screens) -->
+            <!-- regular navbar links (for larger screens) -->
             <div class="space-x-6 hidden lg:flex nav-links">
                 <a href="../personal/personal.html" class="hover:text-gray-400">Personal</a>
                 <a href="../gallery/gallery.html" class="hover:text-gray-400">Gallery</a>
@@ -74,17 +68,19 @@
                 <a href="../contact/contact.html" class="hover:text-gray-400">Contact</a>
             </div>
 
-            <!-- Hamburger Icon (for smaller screens) -->
+            <!-- hamburger icon (for smaller screens) -->
             <label for="menu-toggle" class="hamburger block lg:hidden cursor-pointer">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
                 </svg>
             </label>
 
-            <!-- Hidden checkbox to toggle the sidebar -->
+            <!-- hidden checkbox to toggle the sidebar -->
             <input type="checkbox" id="menu-toggle" class="hidden">
 
-            <!-- Sidebar Menu (for smaller screens) -->
+            <!-- sidebar menu (for smaller screens) -->
             <div class="sidebar fixed top-0 right-0 bg-gray-800 w-2/3 h-full z-50">
                 <div class="p-4">
                     <label for="menu-toggle" class="text-white text-xl font-bold cursor-pointer">&times;</label>
@@ -99,18 +95,17 @@
             </div>
         </div>
     </nav>
-    <!-- Main Content Section -->
+    <!-- main content section -->
     <main class="text-center mt-12 w-full fade-in-up">
-        <!-- Profile Picture -->
-        <img src="pfp.png" alt="Profile" class="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg fade-in-up">
+        <!-- profile picture -->
+        <img src="maham.png" alt="Profile" class="w-52 h-52 rounded-full mx-auto mb-6 shadow-lg fade-in-up">
         <h1 class="text-2xl font-thin fade-in-up">Hi! I am Maham</h1>
         <p class="text-4xl font-bold max-w-2xl mx-auto fade-in-up">Welcome to my portfolio 👋🏻</p>
 
-      
 
-        <!-- Cards Section with darker background -->
+        <!-- cards section with darker background -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 max-w-6xl mx-auto px-4">
-            <!-- Personal Profile Card -->
+            <!-- personal profile card -->
             <div
                 class="bg-gray-850 p-6 rounded-lg border border-gray-700 shadow-lg hover:shadow-md transition-shadow outline-none hover:ring-2 ring-gray-500 text-center fade-in-up">
                 <h2 class="text-2xl font-bold mb-4">Personal Profile</h2>
@@ -120,7 +115,7 @@
                     More</a>
             </div>
 
-            <!-- Career Goals Card -->
+            <!-- career goals card -->
             <div
                 class="bg-gray-850 p-6 rounded-lg border border-gray-700 shadow-lg hover:shadow-md transition-shadow outline-none hover:ring-2 ring-gray-500 text-center fade-in-up">
                 <h2 class="text-2xl font-bold mb-4">Career Goals</h2>
@@ -129,7 +124,7 @@
                     class="mt-4 inline-block bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md">Explore</a>
             </div>
 
-            <!-- Projects Card -->
+            <!-- projects card -->
             <div
                 class="bg-gray-850 p-6 rounded-lg border border-gray-700 shadow-lg hover:shadow-md transition-shadow outline-none hover:ring-2 ring-gray-500 text-center fade-in-up">
                 <h2 class="text-2xl font-bold mb-4">Projects</h2>
@@ -139,22 +134,22 @@
                     Projects</a>
             </div>
 
-            <!-- Skills & Interests Card -->
+            <!-- skills & interests card -->
             <div
                 class="bg-gray-850 p-6 rounded-lg border border-gray-700 shadow-lg hover:shadow-md transition-shadow outline-none hover:ring-2 ring-gray-500 text-center fade-in-up">
                 <h2 class="text-2xl font-bold mb-4">Skills & Interests</h2>
-                <p class="text-gray-400">Learn about my technical skills and personal interests.</p>
-                <a href="../skills/skills.html"
+                <p class="text-gray-400">Learn about my skills  personal interests.</p>
+                <a href="../gallery/gallery.html"
                     class="mt-4 inline-block bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md">Find
                     Out More</a>
             </div>
         </div>
 
-        <!-- Skills Section -->
+        <!-- skills section -->
         <section class="mt-16 w-full bg-gray-850 p-8 rounded-lg shadow-lg text-center">
             <h2 class="text-3xl font-bold mb-6">My Skills</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Skill 1 -->
+                <!-- skill 1 -->
                 <div
                     class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-300 ease-in-out">
                     <h3 class="text-2xl font-bold mb-2">Flutter & Dart</h3>
@@ -162,7 +157,7 @@
                         user experience and performance.</p>
                 </div>
 
-                <!-- Skill 2 -->
+                <!-- skill 2 -->
                 <div
                     class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-300 ease-in-out">
                     <h3 class="text-2xl font-bold mb-2">Swift & iOS Development</h3>
@@ -170,7 +165,7 @@
                         like AR integration and custom UI components.</p>
                 </div>
 
-                <!-- Skill 3 -->
+                <!-- skill 3 -->
                 <div
                     class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-300 ease-in-out">
                     <h3 class="text-2xl font-bold mb-2">Java & Spring Boot</h3>
@@ -178,7 +173,7 @@
                         building scalable services.</p>
                 </div>
 
-                <!-- Skill 4 -->
+                <!-- skill 4 -->
                 <div
                     class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-300 ease-in-out">
                     <h3 class="text-2xl font-bold mb-2">MongoDB & SQL</h3>
@@ -186,7 +181,7 @@
                         technologies for optimal performance.</p>
                 </div>
 
-                <!-- Skill 5 -->
+                <!-- skill 5 -->
                 <div
                     class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-800 transition-all du22ration-300 ease-in-out">
                     <h3 class="text-2xl font-bold mb-2">UI/UX Design</h3>
@@ -194,7 +189,7 @@
                         pleasing interfaces for mobile applications.</p>
                 </div>
 
-                <!-- Skill 6 -->
+                <!-- skill 6 -->
                 <div
                     class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-300 ease-in-out">
                     <h3 class="text-2xl font-bold mb-2">Git & Version Control</h3>
@@ -206,7 +201,7 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- footer -->
     <footer class="mt-auto w-full bg-gray-900 p-4 text-center text-gray-500">
         <div class="mt-4 space-x-4">
             <a href="https://www.linkedin.com/in/maham-i-6642a6286/" class="text-gray-400 hover:text-white"

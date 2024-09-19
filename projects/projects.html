@@ -8,10 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../home/styles.css">
     <style>
-        /* Sidebar Styles */
         #menu-toggle:checked+.sidebar {
             transform: translateX(0);
-            /* Show sidebar when checkbox is checked */
         }
 
         .sidebar {
@@ -22,12 +20,10 @@
             width: 60%;
             background-color: rgba(0, 0, 0, 0.8);
             transform: translateX(100%);
-            /* Initially hidden */
             transition: transform 0.3s ease-in-out;
             z-index: 50;
         }
 
-        /* Hide the regular navbar on mobile screens */
         @media (max-width: 1024px) {
             .nav-links {
                 display: none;
@@ -38,7 +34,6 @@
             }
         }
 
-        /* Show the regular navbar on larger screens */
         @media (min-width: 1025px) {
             .hamburger {
                 display: none;
@@ -49,7 +44,6 @@
             }
         }
 
-        /* Hide checkbox */
         #menu-toggle {
             display: none;
         }
@@ -61,10 +55,9 @@
     <!-- Navigation Bar -->
     <nav class="w-full bg-gray-900 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-xl font-semibold">
+            <div class="text-2xl font-bold">
                 <a href="../home/index.html" class="text-white hover:text-gray-400">My Portfolio</a>
             </div>
-
             <!-- Regular Navbar Links (for larger screens) -->
             <div class="space-x-6 hidden lg:flex nav-links">
                 <a href="../personal/personal.html" class="hover:text-gray-400">Personal</a>
@@ -105,8 +98,7 @@
     <!-- Main Content Section -->
     <main class="text-center mt-12 w-full fade-in-up">
         <h1 class="text-4xl font-bold mb-8">My Projects</h1>
-        <p class="text-lg text-gray-300 mb-12">Here are some of the projects I've worked on. Explore the technologies
-            I've used and check out the code or live demos!</p>
+        <p class="text-lg text-gray-300 mb-12">Here are some of the projects I've worked on!</p>
 
         <!-- Project Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 fade-in-up">
